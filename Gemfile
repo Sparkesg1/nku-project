@@ -8,7 +8,7 @@ gem 'sass-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'bootstrap-sass'
 gem 'thin'
-gem 'bcrypt'
+gem "bcrypt-ruby", :require => "bcrypt"
 
 group :development, :test do
   gem 'byebug'

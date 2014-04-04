@@ -4,6 +4,7 @@ class CreateEmployees < ActiveRecord::Migration
       t.string :first_name
       t.string :middle_initial
       t.string :last_name
+      t.string :user_name
       t.timestamps
     end
   end
