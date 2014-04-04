@@ -1,0 +1,26 @@
+<h1>Add Employee</h1>
+  <% if flash[:notice] %>
+<h1><div class="notice"><%= flash[:notice] %></div></h1>
+  <% end %>
+
+
+<%= form_for @employee do |f| %>
+  <p>
+    <%= f.label :Firstname %><br>
+    <%= f.text_field :first_name %>
+  </p>
+
+  <p>
+    <%= f.label :Lastname %><br>
+    <%= f.text_field :last_name %>
+  </p>
+
+  <p>
+    <%= f.label :MiddleInitial %><br>
+    <%= f.text_field :middle_initial %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
