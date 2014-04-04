@@ -24,7 +24,8 @@ ActiveRecord::Schema.define(version: 20140404151234) do
     t.string   "first_name"
     t.string   "middle_initial"
     t.string   "last_name"
-    t.string   "user_name"
+    t.string   "email"
+    t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

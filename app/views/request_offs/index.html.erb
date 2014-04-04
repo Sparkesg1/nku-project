@@ -1,11 +1,13 @@
 <table>
   <tr>
-  <td><h3>Day requested off</h3></td>
-  <td><h3>Date request made</h3></td>
+  <td><h3> Employee Name </h3></td>
+  <td><h3> Day requested off </h3></td>
+  <td><h3> Date request made </h3></td>
   </tr>
  
   <% @request_off.each do |request_off| %>
     <tr>
+      <td></td>
       <td><%= request_off.requested_date %></td>
       <td><%= request_off.created_at %></td>
       <br>
