@@ -9,8 +9,6 @@ class RequestOffsController < ApplicationController
   end
   
   def create
-    @current = current_user
-    
     @request_off = Request_off.new
     @request_off.requested_date = params[:request_off][:requested_date]
     @request_off.created_at = Time.now 
@@ -18,6 +16,7 @@ class RequestOffsController < ApplicationController
         
     if @request_off.save
      flash[:notice] = "You have successfully requested a day off."
+      redirect_to request_offs_path
     end
   end
   def show
