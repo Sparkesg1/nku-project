@@ -6,6 +6,7 @@ class CreateEmployees < ActiveRecord::Migration
       t.string   :last_name
       t.string   :email
       t.string   :password_digest
+      t.boolean  :is_admin
       t.timestamps
     end
   end

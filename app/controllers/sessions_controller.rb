@@ -1,4 +1,7 @@
 class SessionsController < ApplicationController
+  
+  skip_before_action :require_login, only: [:index, :create, :new]
+  
   def index
     @current_user = current_user
     if( @current_user != nil )
