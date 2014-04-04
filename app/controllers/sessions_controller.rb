@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
     end
   end
   
-def logout
+  def destroy
     session[:employee_id] = nil
     redirect_to sessions_path
   end
