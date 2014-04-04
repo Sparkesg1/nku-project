@@ -9,7 +9,10 @@
 <body>
   <%= link_to ' create new employee ', new_employee_path %>
   <%= link_to ' request off ', new_request_off_path %>
+    <%= link_to ' view requests off ', request_off_path %>
+  <br>
   <%= link_to ' Login ', sessions_path %>
+
   <br>
   <%= @current_user %>
 <%= yield %>
