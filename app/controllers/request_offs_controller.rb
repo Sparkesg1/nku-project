@@ -9,9 +9,16 @@ class RequestOffsController < ApplicationController
   end
   
   def create
+    @current = current_user
+
+    if !@current
+      redirect_to sessions_path
+    end
+    
     @request_off = Request_off.new
     @request_off.requested_date = params[:request_off][:requested_date]
     @request_off.created_at = Time.now 
+    @request_off.employee_id = @current.id
     @request_off.save
         
     if @request_off.save

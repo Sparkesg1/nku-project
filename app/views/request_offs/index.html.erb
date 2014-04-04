@@ -1,4 +1,5 @@
 <table>
+  <% @current = current_user %>
   <tr>
   <td><h3> Employee Name </h3></td>
   <td><h3> Day requested off </h3></td>
@@ -7,7 +8,7 @@
  
   <% @request_off.each do |request_off| %>
     <tr>
-      <td></td>
+      <td><%= request_off.employee.first_name %></td>
       <td><%= request_off.requested_date %></td>
       <td><%= request_off.created_at %></td>
       <br>
