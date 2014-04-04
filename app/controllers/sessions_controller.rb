@@ -9,11 +9,10 @@ class SessionsController < ApplicationController
   end
   
   def create
-    @employee = Employee.find_by_email(params[:employee][:email])
-    
-    if( @employee && @employee.authenticate( params[:employee][:password] ) )
+    @employee = Employee.find_by_email(params[:email])
+    if( @employee && @employee.authenticate(params[:password]))
       session[:employee_id] = @employee.id
-      redirect_to employees_path
+      redirect_to employees_path, :notice => "Logging in!"
     else
       @employee = Employee.new
       flash.now.notice = "Invalid email or password"

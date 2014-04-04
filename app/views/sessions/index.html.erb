@@ -5,7 +5,7 @@
 <%= form_tag sessions_path do %>
   <p>
     <%= label_tag :EmailAddress %><br>
-    <%= text_field_tag :email %>
+    <%= text_field_tag :email, params[:email] %>
   </p>
 
   <p>
