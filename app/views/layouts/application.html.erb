@@ -15,14 +15,14 @@
     <%= link_to ' request off ', new_request_off_path, class: "btn btn-default navbar-btn" %>
     <%= link_to ' view requests off ', request_offs_path, class: "btn btn-default navbar-btn" %>
     <br>
-    <p class="navbar-text current-student hello-text">
+    <p class>
     Hi <%= current_user.first_name %>!
     </p>
     <%= link_to "Sign out", session_path(session), method: :delete, 
       data: { confirm: 'Are you sure you want to sign out?' }, class: "btn btn-default navbar-btn"%>
   <% else %>
     <%= link_to ' create new employee ', new_employee_path, class: "btn btn-default navbar-btn" %>
-    <%= link_to ' Login ', sessions_path %>
+    <%= link_to ' Login ', sessions_path, class: "btn btn-default navbar-btn" %>
   <% end %>
   <br>
   <% if flash[:notice] %>
