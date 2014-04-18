@@ -15,5 +15,5 @@ class ApplicationController < ActionController::Base
       redirect_to sessions_path
     end
   end
-  
+        
 end

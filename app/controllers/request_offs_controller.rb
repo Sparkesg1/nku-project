@@ -26,7 +26,9 @@ class RequestOffsController < ApplicationController
       redirect_to request_offs_path
     end
   end
+  
   def show
     @request_off = Request_off.where("employee_id = ?", params[:id])
   end
+  
 end
