@@ -24,6 +24,7 @@ class EmployeesController < ApplicationController
       session[:employee_id] = @employee.id
     else
       flash.now.notice = "You have Failed to create an Employee"
+      redirect_to new_employee_path
     end
     redirect_to employees_path
   end
