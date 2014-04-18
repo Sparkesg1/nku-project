@@ -3,6 +3,7 @@
   <td><h3> Employee Name </h3></td>
   <td><h3> Day requested off </h3></td>
   <td><h3> Date request made </h3></td>
+  <td><h3> Request Status </h3></td>
   </tr>
   <% if @current.is_admin? %>
   <% @request_offs.each do |request_off| %>
@@ -19,6 +20,7 @@
       <td><%= request_off.employee.first_name %></td>
       <td><%= request_off.requested_date %></td>
       <td><%= request_off.created_at %></td>
+      <td><%= request_off.request_response %></td>
       <br>
     </tr>
   <% end %>
