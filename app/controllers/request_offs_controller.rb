@@ -1,7 +1,8 @@
 class RequestOffsController < ApplicationController
 
   def index
-    @request_off = Request_off.all
+    @current_employee = current_user
+    @request_offs = Request_off.all
   end
   
   def new
