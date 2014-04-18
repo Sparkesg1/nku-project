@@ -1,8 +1,17 @@
 class RequestOffsController < ApplicationController
 
   def index
-    @current_employee = current_user
-    @request_offs = Request_off.all
+    @current = current_user
+    if( @current.is_admin? )
+      if( params[:employee_id] )
+        @selected_employee = Employee.find( params[:employee_id] )
+        @request_off = @selected_employee.request_off
+      else
+        @request_offs = Request_off.all
+      end
+    else
+      @request_off = Request_off.where("employee_id = ?", current_user.id)      
+    end
   end
   
   def new
@@ -24,12 +33,8 @@ class RequestOffsController < ApplicationController
         
     if @request_off.save
      flash[:notice] = "You have successfully requested a day off."
-      redirect_to request_offs_path
+      redirect_to request_offs_path(current_user)
     end
   end
-  
-  def show
-    @request_off = Request_off.where("employee_id = ?", params[:id])
-  end
-  
+ 
 end

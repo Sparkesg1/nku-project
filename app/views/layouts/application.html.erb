@@ -11,11 +11,13 @@
   <% if current_user %>
     <br>
     <%= link_to ' request off ', new_request_off_path, class: "btn btn-default navbar-btn" %>
+
     <% if current_user.is_admin? %>
       <%= link_to ' view requests off ', request_offs_path, class: "btn btn-default navbar-btn" %>
     <% else %>
-      <%= link_to ' view your requests off ', request_off_path(current_user), class: "btn btn-default navbar-btn" %>
+      <%= link_to ' view your requests off ', request_offs_path, class: "btn btn-default navbar-btn" %>
     <% end %>
+
     <br>
     <p class>
     Hi <%= current_user.first_name %>!
