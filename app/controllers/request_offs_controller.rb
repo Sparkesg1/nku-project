@@ -14,8 +14,16 @@ class RequestOffsController < ApplicationController
     end
   end
   
+  def update
+    #add in for buttons to update pending
+  end
+  
   def new
     @request_off = Request_off.new
+  end
+  
+  def edit
+    @request_response = Request_off.find(params[:id])
   end
   
   def create
@@ -36,5 +44,4 @@ class RequestOffsController < ApplicationController
       redirect_to request_offs_path(current_user)
     end
   end
- 
 end

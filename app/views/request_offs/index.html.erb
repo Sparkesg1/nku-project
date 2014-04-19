@@ -11,11 +11,18 @@
       <td><%= request_off.employee.first_name %></td>
       <td><%= request_off.requested_date %></td>
       <td><%= request_off.created_at %></td>
-      <br>
+      <td><%= request_off.request_response %></td>
+      <td>
+      <% request = request_off.request_response %>
+        <% if request == "Pending" %>
+
+        <% end %>
+      </td>
     </tr>
   <% end %>
   <% else %>
     <% @request_off.each do |request_off| %>
+
     <tr>
       <td><%= request_off.employee.first_name %></td>
       <td><%= request_off.requested_date %></td>
