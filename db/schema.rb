@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20140404151234) do
   create_table "request_offs", force: true do |t|
     t.integer  "employee_id"
     t.date     "requested_date"
+    t.string   "comment"
     t.string   "request_response", default: "Pending"
     t.datetime "created_at"
     t.datetime "updated_at"

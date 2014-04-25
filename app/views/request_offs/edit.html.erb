@@ -1,0 +1,10 @@
+<%= @comment %>
+<%= form_for :request_off, url: request_offs_path(@request_off), method: :patch do |f| %>
+  <p>
+    <%= f.label :Status %><br>
+    <%= f.text_field :request_response %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

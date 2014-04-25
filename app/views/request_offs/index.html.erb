@@ -4,21 +4,20 @@
   <td><h3> Day requested off </h3></td>
   <td><h3> Date request made </h3></td>
   <td><h3> Request Status </h3></td>
+
   </tr>
   <% if @current.is_admin? %>
   <% @request_offs.each do |request_off| %>
     <tr>
-      <td><%= request_off.employee.first_name %></td>
+      <td><%= link_to( request_off.employee.first_name, edit_request_off_path( request_off.employee ) ) %></td>
       <td><%= request_off.requested_date %></td>
       <td><%= request_off.created_at %></td>
       <td><%= request_off.request_response %></td>
+      <tr>
+        <td><h4> Comment </h4></td>
+        <td colspan = 4><%= request_off.comment %></td>
+      </tr>
       <td>
-      <% request = request_off.request_response %>
-        <% if request == "Pending" %>
-
-        <% end %>
-      </td>
-    </tr>
   <% end %>
   <% else %>
     <% @request_off.each do |request_off| %>

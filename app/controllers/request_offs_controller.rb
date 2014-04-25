@@ -14,16 +14,18 @@ class RequestOffsController < ApplicationController
     end
   end
   
-  def update
-    #add in for buttons to update pending
-  end
-  
   def new
     @request_off = Request_off.new
   end
   
   def edit
     @request_response = Request_off.find(params[:id])
+    @comment = @request_response.comment
+  end
+  
+  def update
+    @request_response = Request_off.find(params[:id])
+    
   end
   
   def create
@@ -35,6 +37,7 @@ class RequestOffsController < ApplicationController
     
     @request_off = Request_off.new
     @request_off.requested_date = params[:request_off][:requested_date]
+    @request_off.comment = params[:request_off][:comment]
     @request_off.created_at = Time.now 
     @request_off.employee_id = @current.id
     @request_off.save
