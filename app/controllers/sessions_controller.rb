@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
     @employee = Employee.find_by_email(params[:email])
     if( @employee && @employee.authenticate(params[:password]))
       session[:employee_id] = @employee.id
-      redirect_to employees_path, :notice => "Logging in!"
+      redirect_to request_offs_path, :notice => "Logging in!"
     else
       @employee = Employee.new
       flash.now.notice = "Invalid email or password"

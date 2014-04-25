@@ -1,0 +1,12 @@
+  <%= form_for @employee do |f| %>
+  <p>
+    <%= f.label :Password %><br>
+    <%= f.password_field :password %>
+  </p>
+  <p>
+    <%= f.label :PasswordConfirmation %><br>
+    <%= f.password_field :password_confirmation %>
+  </p>
+  <p>
+    <%= submit_tag 'Confirm' %>
+    <% end %>

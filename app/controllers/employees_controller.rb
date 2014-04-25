@@ -14,6 +14,26 @@ class EmployeesController < ApplicationController
     end
   end
   
+    def edit
+      @current_user = current_user
+      @employee = Employee.find(params[:id])
+      if @employee != @current_user
+        redirect_to edit_employee_path(@current_user.id)
+    end
+
+  end
+
+  def update
+    @employee = Employee.find(params[:id])
+ 
+    if @employee.update(params[:employee].permit(:password, :password_confirmation))
+      flash[:notice] = "You have successfully updated your password"
+      redirect_to request_offs_path
+    else
+      render 'edit'
+    end
+  end
+  
   def show
   end
   
