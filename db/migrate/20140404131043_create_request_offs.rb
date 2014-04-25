@@ -6,6 +6,7 @@ class CreateRequestOffs < ActiveRecord::Migration
       t.string      :comment
       t.string      :admin_comment
       t.string      :request_response, default: 'Pending'
+      t.string      :vacation_type
       t.timestamps
     end
   end

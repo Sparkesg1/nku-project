@@ -50,6 +50,10 @@ class RequestOffsController < ApplicationController
     if @request_off.save
      flash[:notice] = "You have successfully requested a day off."
       redirect_to request_offs_path(current_user)
+    else
+      flash[:notice] = "You may only request a specific day once"
+      render 'new'
     end
+    
   end
 end

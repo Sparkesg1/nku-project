@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20140404151234) do
     t.string   "comment"
     t.string   "admin_comment"
     t.string   "request_response", default: "Pending"
+    t.string   "vacation_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
