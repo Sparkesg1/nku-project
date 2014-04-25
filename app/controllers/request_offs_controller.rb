@@ -20,12 +20,17 @@ class RequestOffsController < ApplicationController
   
   def edit
     @request_response = Request_off.find(params[:id])
-    @comment = @request_response.comment
   end
   
   def update
     @request_response = Request_off.find(params[:id])
-    
+        
+    if @request_response.update(params[:request_off].permit(:admin_comment, :request_response))
+      flash[:notice] = "You have successfully updated a request"
+      redirect_to request_offs_path
+    else
+      
+    end
   end
   
   def create

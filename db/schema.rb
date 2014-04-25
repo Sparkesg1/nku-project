@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20140404151234) do
     t.integer  "employee_id"
     t.date     "requested_date"
     t.string   "comment"
+    t.string   "admin_comment"
     t.string   "request_response", default: "Pending"
     t.datetime "created_at"
     t.datetime "updated_at"

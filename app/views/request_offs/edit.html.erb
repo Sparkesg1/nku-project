@@ -1,10 +1,27 @@
-<%= @comment %>
-<%= form_for :request_off, url: request_offs_path(@request_off), method: :patch do |f| %>
-  <p>
+<table>
+  <tr>
+    <td><h4>Todays Date:</h4></td>
+    <td><%= Date.today %></td>
+  </tr>
+  <tr>
+    <td><h4>Requested Date</h4></td>
+    <td><%= @request_response.requested_date %></td>
+  </tr>
+  <tr>
+    <td><h4>Request comment:<h4></td>
+    <td><%= @request_response.comment %><td>
+  </tr>
+</table>
+<%= form_for @request_response do |f| %>
+    <p>
     <%= f.label :Status %><br>
     <%= f.text_field :request_response %>
   </p>
   <p>
-    <%= f.submit %>
+    <%= f.label :Comment %><br>
+    <%= f.text_area :admin_comment %>
+  </p>
+  <p>
+    <%= submit_tag 'Accepted' %>
   </p>
 <% end %>

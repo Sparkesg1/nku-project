@@ -4,6 +4,7 @@ class CreateRequestOffs < ActiveRecord::Migration
       t.integer     :employee_id
       t.date        :requested_date
       t.string      :comment
+      t.string      :admin_comment
       t.string      :request_response, default: 'Pending'
       t.timestamps
     end
