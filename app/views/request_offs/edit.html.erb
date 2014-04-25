@@ -13,8 +13,8 @@
   </tr>
 </table>
 <%= form_for @request_response do |f| %>
-    <p>
-    <%= f.label :Status %><br>
+  <p>
+    <%= f.label :Response %><br>
     <%= f.text_field :request_response %>
   </p>
   <p>
@@ -22,6 +22,6 @@
     <%= f.text_area :admin_comment %>
   </p>
   <p>
-    <%= submit_tag 'Accepted' %>
+    <%= submit_tag 'Confirm' %>
   </p>
 <% end %>
