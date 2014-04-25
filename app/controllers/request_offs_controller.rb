@@ -25,7 +25,7 @@ class RequestOffsController < ApplicationController
   def update
     @request_response = Request_off.find(params[:id])
         
-    if @request_response.update(params[:request_off].permit(:admin_comment, :request_response))
+    if @request_response.update(params[:request_off].permit(:admin_comment, :request_response, :vacation_type))
       flash[:notice] = "You have successfully updated a request"
       redirect_to request_offs_path
     else
@@ -39,12 +39,12 @@ class RequestOffsController < ApplicationController
     if !@current
       redirect_to sessions_path
     end
-    
     @request_off = Request_off.new
     @request_off.requested_date = params[:request_off][:requested_date]
     @request_off.comment = params[:request_off][:comment]
     @request_off.created_at = Time.now 
     @request_off.employee_id = @current.id
+    @request_off.vacation_type = params[:request_off][:vacation_type]
     @request_off.save
         
     if @request_off.save

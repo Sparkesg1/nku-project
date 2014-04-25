@@ -10,6 +10,9 @@
     <%= f.text_area :comment %>
   </p>
 
-  <%= f.submit "Create" %> 
+  <p>
+    <%= f.select(:vacation_type, { "Paid Day Off" => 'paid', "Unpaid Day Off" => 'unpaid'}) %>
+  </p>
+  <%= f.submit "Request Off" %> 
 
 <% end %>
