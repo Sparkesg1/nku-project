@@ -14,8 +14,7 @@
 </table>
   <%= form_for @request_response do |f| %>
   <p>
-    <%= f.label :Response %><br>
-    <%= f.text_field :request_response %>
+    <%= f.select(:request_response, { "Accept" => 'accepted', "Deny" => 'denied'}) %>
   </p>
   <p>
     <%= f.label :Comment %><br>
