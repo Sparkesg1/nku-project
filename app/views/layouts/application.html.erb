@@ -24,12 +24,12 @@
       <%= link_to "Change your password", edit_employee_path(current_user), class: "btn btn-default navbar-btn" %>
   
       <%= link_to "Sign out", session_path(session), method: :delete, 
-        data: { confirm: 'Are you sure you want to sign out?' }, class: "btn btn-default navbar-btn"%>
+        data: { confirm: 'Are you sure you want to sign out?' }, class: "btn btn-danger navbar-btn"%>
     <center> Hi <%= current_user.first_name %>!</center>
   
     <% else %>
       <%= link_to ' create new employee ', new_employee_path, class: "btn btn-default navbar-btn" %>
-      <%= link_to ' Login ', sessions_path, class: "btn btn-default navbar-btn" %>
+      <%= link_to ' Login ', sessions_path, class: "btn btn-primary navbar-btn" %>
     <% end %>
   
     <br>

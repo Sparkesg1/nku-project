@@ -10,31 +10,32 @@
 
   </tr>
   <% if @current.is_admin? %>
-    <% @request_offs.each do |request_off| %>
-    <tr>
-      <td><%= link_to( request_off.employee.first_name, edit_request_off_path( request_off ) ) %></td>
-      <td><%= request_off.requested_date %></td>
-      <td><%= request_off.created_at %></td>
-      <td><%= request_off.request_response %></td>
-      <td><%= request_off.vacation_type %></td>
-      <td><%= request_off.admin_comment %></td>
-    <tr>
+      <% @request_offs.each do |request_off| %>
+      <tr>
+        <td><%= link_to( request_off.employee.first_name, edit_request_off_path( request_off ) ) %></td>
+        <td><%= request_off.requested_date %></td>
+        <td><%= request_off.created_at %></td>
+        <td><%= request_off.request_response %></td>
+        <td><%= request_off.vacation_type %></td>
+        <td><%= request_off.admin_comment %></td>
+      <tr>
         <th><h4> Comment </h4></th>
         <th colspan = 4><%= request_off.comment %></th>
-    </tr>
-    <% end %>
-  <% else %>
-    <% @request_off.each do |request_off| %>
+      </tr>
+      <% end %>
+    <% else %>
+      <% @request_off.each do |request_off| %>
 
-    <tr>
-      <td><%= request_off.employee.first_name %></td>
-      <td><%= request_off.requested_date %></td>
-      <td><%= request_off.created_at %></td>
-      <td><%= request_off.request_response %></td>
-      <td><%= request_off.vacation_type %></td>
-      <td><%= request_off.admin_comment %></td>
-      <br>
-    </tr>
+      <tr>
+        <td><%= request_off.employee.first_name %></td>
+        <td><%= request_off.requested_date %></td>
+        <td><%= request_off.created_at %></td>
+        <td><%= request_off.request_response %></td>
+        <td><%= request_off.vacation_type %></td>
+        <td><%= request_off.admin_comment %></td>
+        <br>
+      </tr>
+
   <% end %>
   <% end %>
 
