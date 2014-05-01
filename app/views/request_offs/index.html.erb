@@ -42,12 +42,30 @@
       <% end %>
       <tr>
         <th><h4> Comment </h4></th>
-        <th colspan = 4><%= request_off.comment %></th>
+        <th colspan = 5><%= request_off.comment %></th>
       </tr>
       <% end %>
     <% else %>
       <% @request_off.each do |request_off| %>
-
+      <% if request_off.request_response == 'denied' %>
+      <tr BGCOLOR="#FF0000">
+        <td><%= request_off.employee.first_name %></td>
+        <td><%= request_off.requested_date %></td>
+        <td><%= request_off.created_at %></td>
+        <td><%= request_off.request_response %></td>
+        <td><%= request_off.vacation_type %></td>
+        <td><%= request_off.admin_comment %></td>
+      </tr>
+      <% else if request_off.request_response == 'accepted' %>
+      <tr  BGCOLOR="00FF00">
+        <td><%= request_off.employee.first_name %></td>
+        <td><%= request_off.requested_date %></td>
+        <td><%= request_off.created_at %></td>
+        <td><%= request_off.request_response %></td>
+        <td><%= request_off.vacation_type %></td>
+        <td><%= request_off.admin_comment %></td>
+      </tr>
+      <% else %>
       <tr>
         <td><%= request_off.employee.first_name %></td>
         <td><%= request_off.requested_date %></td>
@@ -55,10 +73,15 @@
         <td><%= request_off.request_response %></td>
         <td><%= request_off.vacation_type %></td>
         <td><%= request_off.admin_comment %></td>
-        <br>
+      </tr>
+      <% end %>
+      <% end %>
+      <tr>
+        <th><h4> Comment </h4></th>
+        <th colspan = 5><%= request_off.comment %></th>
       </tr>
 
-  <% end %>
+    <% end %>
   <% end %>
 
 
