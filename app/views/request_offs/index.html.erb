@@ -1,16 +1,17 @@
-<center>
+<div>
 <table>
   <tr>
   <td><h3> Employee Name </h3></td>
   <td><h3> Day requested off </h3></td>
   <td><h3> Date request made </h3></td>
   <td><h3> Request Status </h3></td>
-    <td><h3> Request Type </h3></td>
+  <td><h3> Request Type </h3></td>
   <td><h3> Manager Comment </h3><td>
 
   </tr>
   <% if @current.is_admin? %>
-      <% @request_offs.each do |request_off| %>
+    <% @request_offs.each do |request_off| %>
+
       <tr>
         <td><%= link_to( request_off.employee.first_name, edit_request_off_path( request_off ) ) %></td>
         <td><%= request_off.requested_date %></td>
@@ -18,6 +19,7 @@
         <td><%= request_off.request_response %></td>
         <td><%= request_off.vacation_type %></td>
         <td><%= request_off.admin_comment %></td>
+      </tr>
       <tr>
         <th><h4> Comment </h4></th>
         <th colspan = 4><%= request_off.comment %></th>
@@ -41,4 +43,4 @@
 
 
 </table>
-</center>
+</div>
