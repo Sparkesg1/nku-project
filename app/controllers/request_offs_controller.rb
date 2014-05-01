@@ -1,6 +1,7 @@
 class RequestOffsController < ApplicationController
 
   def index
+    @employees = Employee.all
     @current = current_user
     if( @current.is_admin? )
       if( params[:employee_id] )

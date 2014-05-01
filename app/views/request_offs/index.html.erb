@@ -1,5 +1,16 @@
 <div>
-<table>
+<% if @current.is_admin? %>
+  <%= form_tag( request_offs_path, method: 'get') do %>
+    <%= select_tag "employee_id", options_from_collection_for_select(@employees, "id", "first_name") %>
+    <br />
+    <%= submit_tag "View Requests" %>
+  <% end %>
+<% end %>
+  <% if @selected_employee %>
+    <%= @selected_employee.first_name %>'s Requests
+
+  <% else %>
+  <table>
   <tr>
   <td><h3> Employee Name </h3></td>
   <td><h3> Day requested off </h3></td>
@@ -113,7 +124,7 @@
 
     <% end %>
   <% end %>
-
+  <% end %>
 
 </table>
 </div>

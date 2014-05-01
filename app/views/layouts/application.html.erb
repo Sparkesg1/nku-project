@@ -22,9 +22,10 @@
         <%= link_to ' view your requests off ', request_offs_path, class: "btn btn-default navbar-btn" %>
       <% end %>
       <%= link_to "Change your password", edit_employee_path(current_user), class: "btn btn-default navbar-btn" %>
-  
+      <br>
       <%= link_to "Sign out", session_path(session), method: :delete, 
         data: { confirm: 'Are you sure you want to sign out?' }, class: "btn btn-danger navbar-btn"%>
+
     <center> Hi <%= current_user.first_name %>!</center>
   
     <% else %>
