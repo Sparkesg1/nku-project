@@ -6,7 +6,6 @@ class RequestOffsController < ApplicationController
     if( @current.is_admin? )
       if( params[:employee_id] )
         @selected_employee = Employee.find( params[:employee_id] )
-        @request_off = @selected_employee.request_off
       else
         @request_offs = Request_off.all
       end
@@ -52,7 +51,7 @@ class RequestOffsController < ApplicationController
      flash[:notice] = "You have successfully requested a day off."
       redirect_to request_offs_path(current_user)
     else
-      flash[:notice] = "You may only request a specific day once"
+      flash[:notice] = "You must enter a new date"
       render 'new'
     end
     

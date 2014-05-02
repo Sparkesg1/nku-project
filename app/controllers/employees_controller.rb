@@ -41,7 +41,7 @@ class EmployeesController < ApplicationController
     @employee = Employee.new(employee_params)
     if @employee.save
       flash.now.notice = "You have created an employee"
-      session[:employee_id] = @employee.id
+      redirect_to request_offs_path
     else
       flash.now.notice = "You have Failed to create an Employee"
       render 'new'
